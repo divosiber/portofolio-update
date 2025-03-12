@@ -13,6 +13,31 @@ import cardetect from "../public/cardetec.jpeg";
 import galura from "../public/galura.jpeg";
 
 export default function Home() {
+
+  const internships = [
+    {
+      company: "PT.Winnicode Garuda Indonesia",
+      role: "Full Stack Developer",
+      date: "January, 2025 - Sekarang",
+    },
+    {
+      company: "Sulut Digital Solution",
+      role: "Software Engineer",
+      date: "December, 2025 - Sekarang",
+    },
+    {
+      company: "Startup Campus",
+      role: "MSIB Independent Study Batch 7 - Artificial Intelligence",
+      date: "February, 2024 - June 2024",
+    },
+    {
+      company: "Startup Campus",
+      role: "MSIB Independent Study Batch 6 - Data Science",
+      date: "September, 2024 - December 2024",
+    },
+  ];
+
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
       <div className=" mx-auto max-w-xl px-4 py-20">
@@ -54,8 +79,12 @@ export default function Home() {
               transition={{ duration: 0.7 }}
               className=" mt-9 space-y-2"
             >
-              <h2 className="text-gray-600 dark:text-gray-400 font-semibold">Hallo,</h2>
-              <h2 className="text-gray-600 dark:text-gray-400 font-semibold">Saya DIvo Kalama,</h2>
+              <h2 className="text-gray-600 dark:text-gray-400 font-semibold">
+                Hallo,
+              </h2>
+              <h2 className="text-gray-600 dark:text-gray-400 font-semibold">
+                Saya DIvo Kalama,
+              </h2>
               <h2 className="text-gray-600 dark:text-gray-400 mb-6 font-semibold">
                 Full Stack Developer & AI Engineer Student
               </h2>
@@ -69,9 +98,9 @@ export default function Home() {
               className="flex items-center gap-3"
             >
               <Link href="https://drive.google.com/file/d/1CBSAXB3Uu6nUzP3auyv5eCDyNI_pn4Li/view?usp=drivesdk">
-              <Button className="rounded-full bg-gradient-to-r from-indigo-900 to-rose-600 text-white transition-transform hover:scale-105 cursor-pointer">
-                Resume
-              </Button>
+                <Button className="rounded-full bg-gradient-to-r from-indigo-900 to-rose-600 text-white transition-transform hover:scale-105 cursor-pointer">
+                  Resume
+                </Button>
               </Link>
 
               <Link
@@ -103,96 +132,46 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="space-y-5"
           >
-            <h2 className="mt-10 mb-11 font-semibold text-3xl bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
-              Magang & Studi Independen
-            </h2>
+                <section className="mt-16 px-4 max-w-xl mx-auto">
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-3xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent text-center"
+      >
+        Internship Timeline
+      </motion.h2>
 
-            <div className="space-y-8">
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1">
-                    <p className="text-blue-600 dark:text-blue-400">
-                      PT.Winnicode Garuda Indonesia
-                    </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Januari, 2025 - Sekarang
-                    </p>
-                    <p className="font-medium">Full Stack Developer</p>
-                  </div>
-                </div>
+      <div className="relative border-l-4 border-gray-300 dark:border-gray-700 mt-8 space-y-8 pl-6">
+        {internships.map((intern, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: index * 0.3 }}
+            className="relative"
+          >
+            {/* Bulatan efek glowing */}
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1, boxShadow: "0 0 10px #6366F1" }}
+              transition={{ duration: 0.5 }}
+              className="absolute -left-[1.1rem] w-5 h-5 bg-indigo-500 rounded-full shadow-lg"
+            ></motion.div>
 
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Membuat Portal Berita Dari awal dengan menggunakan Next.js ,
-                  Tailwindcss.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Menghubungkan API berita external yang terpercaya untuk
-                  menampilkan berita.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1">
-                    <p className="text-blue-600 dark:text-blue-400">
-                      Startup Campus
-                    </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Februari, 2024 - Juni 2024
-                    </p>
-                    <p className="font-medium">
-                      MSIB Studi Independen Batch 7{" "}
-                    </p>
-                    <p className="font-medium">Artificial Intelligence </p>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Membantu tim dalam menyelesaikan berbagai tugas.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Mengembangkan Model Sekuensial untuk Klasifikasi Glaukoma.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Top 6 Bidang Kecerdasan Buatan dengan Kinerja Terbaik MSIB
-                  di Startup Campus Angkatan 7.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Top 30 dengan Kinerja Terbaik di Startup Campus Angkatan 7.
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="space-y-1">
-                    <p className="text-blue-600 dark:text-blue-400">
-                      Startup Campus
-                    </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      September, 2024 - Desember 2024
-                    </p>
-                    <p className="font-medium">
-                      MSIB Studi Independen Batch 6{" "}
-                    </p>
-                    <p className="font-medium">Data Science</p>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Memimpin Team dalam membuat proyek akhir.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Sebagai pemimpin tim, saya bertanggung jawab untuk membantu
-                  tim dalam koordinasi dan pemecahan masalah.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Membantu tim dalam menyelesaikan berbagai tugas.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  - Mendukung tim dalam mengembangkan model pembelajaran mesin.
-                </p>
-              </div>
+            <div className="bg-gray-50 dark:bg-zinc-900 p-4 rounded-lg shadow-md">
+              <p className="text-blue-600 dark:text-blue-400 font-semibold">
+                {intern.company}
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                {intern.date}
+              </p>
+              <p className="font-medium">{intern.role}</p>
             </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
           </motion.section>
 
           <motion.section
@@ -201,12 +180,17 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="space-y-7"
           >
-            <h2 className="mt-10 font-semibold text-3xl bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
-              Personal Project
-            </h2>
+           <motion.h2
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className=" mt-20 text-3xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent text-center"
+      >
+        Personal Project
+      </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
-              <Card className="w-64 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
+            <div className="grid grid-cols-2 md:grid-cols-2  gap-4">
+              <Card className="w-52 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
                 <CardContent className="p-3">
                   <Image
                     src={webcorona}
@@ -222,7 +206,11 @@ export default function Home() {
                         HTML, CSS, Javascript
                       </p>
                       <Link href="https://website-edukasi-corona.vercel.app/">
-                        <Button variant="ghost" size="icon" className="mt-9 bg-gray-500 w-14">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="mt-9 bg-gray-500 w-14"
+                        >
                           Demo
                         </Button>
                       </Link>
@@ -231,7 +219,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="w-64 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
+              <Card className="w-52 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
                 <CardContent className="p-3">
                   <Image
                     src={crowddetec}
@@ -245,7 +233,11 @@ export default function Home() {
                         Python, YOLOv5, Computer Vision
                       </p>
                       <Link href="https://github.com/divosiber/SCAI7-Project-3-Computer-Vision-dan-Natural-Language-Processing/blob/master/Real_time_Object_Detection_using_CNN_based_Pre_trained_Models.ipynb">
-                        <Button variant="ghost" size="icon" className="mt-9 bg-gray-500 w-25">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="mt-9 bg-gray-500 w-25"
+                        >
                           Source Code
                         </Button>
                       </Link>
@@ -254,7 +246,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="w-64 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
+              <Card className="w-52 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
                 <CardContent className="p-3">
                   <Image
                     src={cardetect}
@@ -268,7 +260,11 @@ export default function Home() {
                         Computer Vision, YOLOv5, Python
                       </p>
                       <Link href="https://github.com/divosiber/SCAI7-Project-3-Computer-Vision-dan-Natural-Language-Processing/blob/master/Real_time_Object_Detection_using_CNN_based_Pre_trained_Models.ipynb">
-                        <Button variant="ghost" size="icon" className="mt-9 bg-gray-500 w-25">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="mt-9 bg-gray-500 w-25"
+                        >
                           Source Code
                         </Button>
                       </Link>
@@ -277,7 +273,7 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="w-64 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
+              <Card className="w-52 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
                 <CardContent className="p-3">
                   <Image
                     src={galura}
@@ -293,7 +289,11 @@ export default function Home() {
                         Model Sequential, Python, Computer Vision, Deep Learning
                       </p>
                       <Link href="https://github.com/ZakiyQirosM/GLAURA-model">
-                        <Button variant="ghost" size="icon" className="mt-9 bg-gray-500 w-27">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="mt-2 bg-gray-500 w-27"
+                        >
                           Selengkapnya
                         </Button>
                       </Link>
