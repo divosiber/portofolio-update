@@ -13,7 +13,6 @@ import cardetect from "../public/cardetec.jpeg";
 import galura from "../public/galura.jpeg";
 
 export default function Home() {
-
   const internships = [
     {
       company: "PT.Winnicode Garuda Indonesia",
@@ -36,7 +35,6 @@ export default function Home() {
       date: "September, 2024 - December 2024",
     },
   ];
-
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
@@ -90,7 +88,7 @@ export default function Home() {
               </h2>
               <p></p>
             </motion.div>
-
+            {/* Sosial Media */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -132,70 +130,71 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="space-y-5"
           >
-                <section className="mt-16 px-4 max-w-xl mx-auto">
-      <motion.h2
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-3xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent text-center"
-      >
-        Internship Timeline
-      </motion.h2>
+            {/* Internship TimeLIne */}
+            <section className="mt-16 px-4 max-w-xl mx-auto">
+              <motion.h2
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                className="text-3xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent text-center"
+              >
+                Internship Timeline
+              </motion.h2>
 
-      <div className="relative border-l-4 border-gray-300 dark:border-gray-700 mt-8 space-y-8 pl-6">
-        {internships.map((intern, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: index * 0.3 }}
-            className="relative"
-          >
-            {/* Bulatan efek glowing */}
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1, boxShadow: "0 0 10px #6366F1" }}
-              transition={{ duration: 0.5 }}
-              className="absolute -left-[1.1rem] w-5 h-5 bg-indigo-500 rounded-full shadow-lg"
-            ></motion.div>
+              <div className="relative border-l-4 border-gray-300 dark:border-gray-700 mt-8 space-y-8 pl-6">
+                {internships.map((intern, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, delay: index * 0.3 }}
+                    className="relative"
+                  >
+                    {/* Bulatan efek glowing */}
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1, boxShadow: "0 0 10px #6366F1" }}
+                      transition={{ duration: 0.5 }}
+                      className="absolute -left-[1.1rem] w-5 h-5 bg-indigo-500 rounded-full shadow-lg"
+                    ></motion.div>
 
-            <div className="bg-gray-50 dark:bg-zinc-900 p-4 rounded-lg shadow-md">
-              <p className="text-blue-600 dark:text-blue-400 font-semibold">
-                {intern.company}
-              </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {intern.date}
-              </p>
-              <p className="font-medium">{intern.role}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+                    <div className="bg-gray-50 dark:bg-zinc-900 p-4 rounded-lg shadow-md">
+                      <p className="text-blue-600 dark:text-blue-400 font-semibold">
+                        {intern.company}
+                      </p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {intern.date}
+                      </p>
+                      <p className="font-medium">{intern.role}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </section>
           </motion.section>
-
+          {/* Personal Project */}
           <motion.section
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="space-y-7"
           >
-           <motion.h2
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className=" mt-20 text-3xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent text-center"
-      >
-        Personal Project
-      </motion.h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className=" mt-20 text-3xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent text-center"
+            >
+              Personal Project
+            </motion.h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-2  gap-4">
-              <Card className="w-52 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
+            <div className="space-y-10 grid grid-cols-1 md:grid-cols-2  gap-4">
+              <Card className="w-[80%] sm:w-52 mx-auto h-96 sm:h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
                 <CardContent className="p-3">
                   <Image
                     src={webcorona}
                     alt="webcorona"
-                    className="rounded-lg mb-3 h-32 w-full object-cover"
+                    className="rounded-lg mb-3 h-60 sm:h-32 w-full object-cover "
                   />
                   <div className="flex items-center justify-between">
                     <div>
@@ -209,7 +208,7 @@ export default function Home() {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="mt-9 bg-gray-500 w-14"
+                          className="mt-2 bg-gray-500 w-14"
                         >
                           Demo
                         </Button>
@@ -219,12 +218,12 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="w-52 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
+              <Card className="w-[80%] sm:w-52 mx-auto h-96 sm:h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
                 <CardContent className="p-3">
                   <Image
                     src={crowddetec}
                     alt="webcorona"
-                    className="rounded-lg mb-3 h-32 w-full object-cover"
+                    className="rounded-lg mb-3 h-60 sm:h-32 w-full object-cover"
                   />
                   <div className="flex items-center justify-between">
                     <div>
@@ -236,7 +235,7 @@ export default function Home() {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="mt-9 bg-gray-500 w-25"
+                          className="mt-2 bg-gray-500 w-25"
                         >
                           Source Code
                         </Button>
@@ -246,12 +245,12 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="w-52 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
+              <Card className="w-[80%] sm:w-52 mx-auto h-96 sm:h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
                 <CardContent className="p-3">
                   <Image
                     src={cardetect}
                     alt="webcorona"
-                    className="rounded-lg mb-3 h-32 w-full object-cover"
+                    className="rounded-lg mb-3 h-60 sm:h-32 w-full object-cover"
                   />
                   <div className="flex items-center justify-between">
                     <div>
@@ -263,7 +262,7 @@ export default function Home() {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="mt-9 bg-gray-500 w-25"
+                          className="mt-2 bg-gray-500 w-25"
                         >
                           Source Code
                         </Button>
@@ -273,12 +272,12 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="w-52 mx-auto h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
+              <Card className="w-[80%] sm:w-52 mx-auto h-96 sm:h-80 bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-900 transition-transform duration-300 hover:scale-105 cursor-pointer">
                 <CardContent className="p-3">
                   <Image
                     src={galura}
                     alt="webcorona"
-                    className="rounded-lg mb-3 h-32 w-full object-cover"
+                    className="rounded-lg mb-3 h- sm:h-32 w-full object-cover"
                   />
                   <div className="flex items-center justify-between">
                     <div>
